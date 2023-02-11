@@ -18,7 +18,7 @@ inputForm.addEventListener('submit', async function (e) {
         body: JSON.stringify(Object.fromEntries(formData))
     });
     const result = await response.json();
-    if (result["status"] === "200"){
+    if (result["status"] === "success"){
         base64 = result["mp3_base"]
         hideElem(spinner);
         displayDownloadButton();
