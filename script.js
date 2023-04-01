@@ -1,6 +1,7 @@
 const inputForm = document.getElementById('inputForm');
 const convertBtn = document.getElementById('convertSubmit');
 const inputUrl = document.getElementById('urlinput');
+const inputLabel = document.getElementById('input-label');
 let spinner = document.getElementById('spin');
 let downloadBtn;
 let convertAnotherBtn;
@@ -29,10 +30,13 @@ async function fetchConversionResult(formData) {
 }
 
 function handleConversionSuccess(result) {
-    let base64 = result["mp3_base"];
+    let base64 = result["wav_base64"];
     hideElem(spinner);
-    createDownloadButton(base64);
+    createDownloadButton(base64, result["video_title"]);
     createConvertAnotherBtn();
+    displaySuccess(result["video_title"]);
+    hideElem(inputUrl);
+    hideElem(inputLabel);
 }
 
 function handleConversionError(result) {
@@ -61,6 +65,17 @@ const displayError = (message) => {
     divAppend.append(errorP);
 }
 
+const displaySuccess = (message) => {
+    divAppend = document.getElementById('success-container');
+    const successP = document.createElement("p");
+    successP.classList.add('success-text');
+    successP.setAttribute('id', 'success');
+    successP.innerText = message;
+
+
+    divAppend.append(successP);
+}
+
 const removeError = () => {
     const error = document.getElementById('error');
     if (error?.parentNode) {
@@ -69,9 +84,20 @@ const removeError = () => {
     }
 }
 
+const removeSuccess = () => {
+    const success = document.getElementById('success');
+    if (success?.parentNode) {
+        showElem(convertBtn);
+        success.parentNode.removeChild(success);
+    }
+}
+
 const resetForm = () => { 
     hideElem(downloadBtn);
     hideElem(convertAnotherBtn);
+    hideElem(document.getElementById('success'));
+    showElem(inputUrl);
+    showElem(inputLabel);
     showElem(convertBtn);
     inputUrl.value = '';
 };
@@ -91,7 +117,7 @@ const createConvertAnotherBtn = () => {
     convertAnotherBtn.addEventListener('click', resetForm);
 }
 
-const createDownloadButton = (base64) => {
+const createDownloadButton = (base64, video_title) => {
     const buttonOptionDiv = document.getElementById("options");
     downloadBtn = document.createElement('button');
     const text = document.createTextNode("Download");
@@ -103,16 +129,17 @@ const createDownloadButton = (base64) => {
     buttonOptionDiv.appendChild(downloadBtn);
 
     downloadBtn.addEventListener('click', () => {
-        downloadBase64AsMP3(base64);
+        downloadBase64AsWAV(base64, video_title);
     });
 }
 
-const downloadBase64AsMP3 = (base64) => {
-    const linkSource = "data:audio/mp3;base64," + base64;
+const downloadBase64AsWAV = (base64, video_title) => {
+    const linkSource = "data:audio/wav;base64," + base64;
     const downloadLink = document.createElement("a");
     downloadLink.href = linkSource;
-    downloadLink.download = "Untitled.mp3";
+    downloadLink.download = `${video_title}.wav`;
     document.body.appendChild(downloadLink);
+
     downloadLink.click();
     document.body.removeChild(downloadLink);
 }

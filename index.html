@@ -14,14 +14,17 @@
         <div class="main-content">
             <div class="heading text-center">
                 <h1 class="main-title">VERT</h1>
-                <h3>A dead simple YouTube to mp3 converter.</h3>
+                <h3>A dead simple YouTube to wav converter.</h3>
             </div>
             <div class="form-body">
                 <form id="inputForm">
-                    <label for="urlinput">Enter a valid YouTube video URL</label>
+                    <label id="input-label" for="urlinput">Enter a valid YouTube video URL</label>
                     <input class="text-box no-focus" id="urlinput" name="inputurl">
+                    <div id="success-container" class="success flex justify-content-center">
+
+                    </div>
                     <div id="options" class="options flex justify-content-center">
-                        <button class="btn btn-primary" id="convertSubmit" type="submit">Convert to MP3</button>
+                        <button class="btn btn-primary" id="convertSubmit" type="submit">Convert to WAV</button>
                     </div>
                     <div id="load-container" class="flex justify-content-center">
                         <i id="spin" class="fas fa-spinner fa-pulse fa-2x hide mt-4"></i>
