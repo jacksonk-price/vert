@@ -14,7 +14,7 @@ async function handleSubmit(e) {
     const response = await fetchConversionResult(formData);
     const result = await response.json();
 
-    if (result["status"] === "success") {
+    if (response.ok) {
         handleConversionSuccess(result);
     } else {
         handleConversionError(result);
@@ -134,9 +134,12 @@ const createDownloadButton = (base64, video_title) => {
 }
 
 const downloadBase64AsWAV = (base64, video_title) => {
-    const linkSource = "data:audio/wav;base64," + base64;
     const downloadLink = document.createElement("a");
-    downloadLink.href = linkSource;
+
+    const blob = new Blob([base64], { type: "audio/wav" });
+    const blobUrl = URL.createObjectURL(blob);
+
+    downloadLink.href = blobUrl;
     downloadLink.download = `${video_title}.wav`;
     document.body.appendChild(downloadLink);
 
