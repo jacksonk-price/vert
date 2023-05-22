@@ -30,9 +30,8 @@ async function fetchConversionResult(formData) {
 }
 
 function handleConversionSuccess(result) {
-    let base64 = result["wav_base64"];
     hideElem(spinner);
-    createDownloadButton(base64, result["video_title"]);
+    createDownloadButton(result["wav_base64"], result["video_title"]);
     createConvertAnotherBtn();
     displaySuccess(result["video_title"]);
     hideElem(inputUrl);
@@ -134,17 +133,20 @@ const createDownloadButton = (base64, video_title) => {
 }
 
 const downloadBase64AsWAV = (base64, video_title) => {
-    const downloadLink = document.createElement("a");
+    const binaryString = window.atob(base64);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+    }
+    const arrayBuffer = bytes.buffer;
 
-    const blob = new Blob([base64], { type: "audio/wav" });
-    const blobUrl = URL.createObjectURL(blob);
+    const blob = new Blob([arrayBuffer], { type: 'audio/wav' });
 
-    downloadLink.href = blobUrl;
-    downloadLink.download = `${video_title}.wav`;
-    document.body.appendChild(downloadLink);
+    const downloadLink = document.createElement('a');
+    downloadLink.href = URL.createObjectURL(blob);
+    downloadLink.download = `${video_title}`;
 
     downloadLink.click();
-    document.body.removeChild(downloadLink);
 }
 
 inputForm.addEventListener('submit', handleSubmit);
