@@ -92,8 +92,7 @@ const createDownloadButton = (base64, video_title) => {
     downloadBtn = document.createElement('button');
     const text = document.createTextNode("Download");
     downloadBtn.appendChild(text);
-    downloadBtn.classList.add('btn');
-    downloadBtn.classList.add('btn-download');
+    downloadBtn.classList.add("bg-slate-200", "hover:bg-slate-400", "text-gray-800", "font-bold", "py-2", "px-4", "mt-2", "rounded");
     downloadBtn.setAttribute("id", "downloadSubmit");
     downloadBtn.setAttribute("type", "button");
     buttonOptionDiv.insertBefore(downloadBtn, convertAnotherBtn);

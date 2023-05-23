@@ -12,7 +12,7 @@
     --dark-purple: #5d49f3;
     --error: red;
     --error-hover: #f33;
-    --white: #fff;
+    --white: #E8E6E3;
     --dark-blue: #0A2647;
 }
 
@@ -32,33 +32,15 @@ html, body{
     height: 100%;
 }
 
-body{
-    background-color: #eaf4f4;
-}
-
 h1, h3, p, label{
-    color: var(--black);
+    color: var(--white);
 }
 
-label, input{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    margin-bottom: 10px;
+input {
+    background-color: #E8E6E3;
+    color: var(--white);
 }
 
-.heading{
-    margin-top: 150px;
-}
-
-.text-box{
-    border: 1px solid var(--black);
-    background-color: var(--white);
-    /*filter: drop-shadow(4px 4px #fff);*/
-    padding: 15px 20px;
-    font-weight: 600;
-}
 
 .no-focus {
     outline: none;
@@ -71,32 +53,12 @@ label, input{
     letter-spacing: -5px;
 }
 
+.heading {
+    margin-top: 5rem;
+}
+
 .form-body{
-    margin-top: 100px;
-}
-
-.btn{
-    color: var(--black);
-    padding: 15px 10px;
-    filter: drop-shadow(4px 4px var(--black));
-    border: 1px solid var(--black);
-    transition: all 0.1s ease-in-out;
-    font-weight: bold;
-}
-
-.btn:hover{
-    filter: drop-shadow(1px 1px var(--black));
-    transform: translate(1px,1px);
-    cursor: pointer;
-}
-
-.btn-primary{
-    background-color: #38bdf8;
-}
-
-.btn-download{
-    background-color: #34d399;
-    margin-right: 10px;
+    margin-top: 10rem;
 }
 
 .flex{
@@ -129,10 +91,6 @@ label, input{
     display: none;
 }
 
-.active{
-    display: block;
-}
-
 #spin{
     color: #38bdf8;
     text-align: center;
@@ -143,11 +101,12 @@ label, input{
 .error-text{
     color: red;
     font-weight: bold;
+    margin: 2rem 0 1rem 0;
 }
 
 .success-text {
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 2rem 0 1rem 0;
 }
 
 #load-container{
