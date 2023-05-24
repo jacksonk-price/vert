@@ -2,9 +2,9 @@ const inputForm = document.getElementById('inputForm');
 const convertBtn = document.getElementById('convertSubmit');
 const inputUrl = document.getElementById('urlinput');
 const inputLabel = document.getElementById('input-label');
-successElem = document.getElementById('success');
-let convertAnotherBtn = document.getElementById('convertAnother');
-let spinner = document.getElementById('spin');
+const successElem = document.getElementById('success');
+const convertAnotherBtn = document.getElementById('convertAnother');
+const spinner = document.getElementById('spin');
 let downloadBtn;
 
 async function handleSubmit(e) {
@@ -23,7 +23,7 @@ async function handleSubmit(e) {
 }
 
 async function fetchConversionResult(formData) {
-    return await fetch('http://127.0.0.1:3000/convert', {
+    return await fetch('http://127.0.0.1:3000/create', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(Object.fromEntries(formData))
@@ -67,6 +67,7 @@ const displaySuccess = (message) => {
 const removeError = () => {
     let error = document.getElementById('error');
     if (error?.parentNode) {
+        toggleElem(convertBtn);
         error.parentNode.removeChild(error);
     }
 }
@@ -106,7 +107,7 @@ const downloadBase64AsWAV = (base64, video_title) => {
     const binaryString = window.atob(base64);
     const bytes = new Uint8Array(binaryString.length);
     for (let i = 0; i < binaryString.length; i++) {
-    bytes[i] = binaryString.charCodeAt(i);
+        bytes[i] = binaryString.charCodeAt(i);
     }
     const arrayBuffer = bytes.buffer;
 

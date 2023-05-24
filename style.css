@@ -46,6 +46,10 @@ input {
     outline: none;
 }
 
+.main-content {
+    min-width: 30\rem;
+}
+
 .main-title{
     font-size: 80px;
     font-weight: 700;
@@ -80,7 +84,7 @@ input {
 .container{
     height: 100%;
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 1400px;
 }
 
 .text-center{
@@ -99,7 +103,7 @@ input {
 }
 
 .error-text{
-    color: red;
+    color: #ef4444;
     font-weight: bold;
     margin: 2rem 0 1rem 0;
 }
