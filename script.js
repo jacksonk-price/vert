@@ -68,6 +68,7 @@ const removeError = () => {
     let error = document.getElementById('error');
     if (error?.parentNode) {
         toggleElem(convertBtn);
+        inputUrl.value = '';
         error.parentNode.removeChild(error);
     }
 }
