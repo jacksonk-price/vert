@@ -49,11 +49,11 @@ const toggleElem = (elem) => {
 }
 
 const displayError = (message) => {
-    divAppend = document.getElementById('options');
+    let divAppend = document.getElementById('options');
     const errorP = document.createElement("p");
+    const newContent = document.createTextNode(message + '.' + ' Please try again.');
     errorP.classList.add('error-text');
     errorP.setAttribute('id', 'error')
-    const newContent = document.createTextNode(message + '.' + ' Please try again.');
     errorP.appendChild(newContent);
 
     divAppend.append(errorP);
@@ -119,6 +119,7 @@ const downloadBase64AsWAV = (base64, video_title) => {
     downloadLink.download = `${video_title}.wav`;
 
     downloadLink.click();
+    downloadLink.remove();
 }
 
 convertAnotherBtn.addEventListener('click', resetForm);
