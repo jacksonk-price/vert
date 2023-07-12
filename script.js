@@ -23,7 +23,7 @@ async function handleSubmit(e) {
 }
 
 async function fetchConversionResult(formData) {
-    return await fetch('http://127.0.0.1:3000/create', {
+    return await fetch('http://127.0.0.1:3000/conversion/create', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(Object.fromEntries(formData))
@@ -44,11 +44,11 @@ function handleConversionError(result) {
     displayError(result["message"]);
 }
 
-const toggleElem = (elem) => {
+function toggleElem(elem) {
     elem.classList.toggle('hide');
 }
 
-const displayError = (message) => {
+function displayError(message) {
     let divAppend = document.getElementById('options');
     const errorP = document.createElement("p");
     const newContent = document.createTextNode(message + '.' + ' Please try again.');
@@ -59,12 +59,12 @@ const displayError = (message) => {
     divAppend.append(errorP);
 }
 
-const displaySuccess = (message) => {
+function displaySuccess(message) {
     toggleElem(successElem);
     successElem.innerText = message;
 }
 
-const removeError = () => {
+function removeError() {
     let error = document.getElementById('error');
     if (error?.parentNode) {
         toggleElem(convertBtn);
@@ -73,12 +73,12 @@ const removeError = () => {
     }
 }
 
-const removeSuccess = () => {
+function removeSuccess() {
     let success = document.getElementById('success');
     success.remove();
 }
 
-const resetForm = () => { 
+function resetForm() { 
     document.getElementById('downloadSubmit').remove();
     toggleElem(convertAnotherBtn);
     toggleElem(successElem);
@@ -89,7 +89,7 @@ const resetForm = () => {
     successElem.innerText = '';
 }
 
-const createDownloadButton = (base64, video_title) => {
+function createDownloadButton(base64, video_title) {
     const buttonOptionDiv = document.getElementById("options");
     downloadBtn = document.createElement('button');
     const text = document.createTextNode("Download");
@@ -104,7 +104,7 @@ const createDownloadButton = (base64, video_title) => {
     });
 }
 
-const downloadBase64AsWAV = (base64, video_title) => {
+function downloadBase64AsWAV(base64, video_title) {
     const binaryString = window.atob(base64);
     const bytes = new Uint8Array(binaryString.length);
     for (let i = 0; i < binaryString.length; i++) {
