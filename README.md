@@ -1,4 +1,4 @@
-# vert_front
-![](/images/vert.png)
-![](/images/vert2.png)
-![](/images/vert3.jpg)
+# Gallery
+![](/src/assets/images/vert.png)
+![](/src/assets/images/vert2.png)
+![](/src/assets/images/vert3.jpg)
