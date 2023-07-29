@@ -11,7 +11,11 @@ async function handleSubmit(e) {
     toggleElem(convertBtn);
     toggleElem(spinner);
     e.preventDefault();
-    const formData = new FormData(inputForm).entries();
+    const formData = {
+        "conversion": {
+            "input_url": inputUrl.value
+        }
+    }
     const response = await fetchConversionResult(formData);
     const result = await response.json();
 
@@ -26,7 +30,7 @@ async function fetchConversionResult(formData) {
     return await fetch('http://127.0.0.1:3000/conversion/create', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.fromEntries(formData))
+      body: JSON.stringify(formData)
     });
 }
 

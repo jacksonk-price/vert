@@ -32,7 +32,7 @@ html, body{
     height: 100%;
 }
 
-h1, h3, p, label{
+h1, h2, p, label{
     color: var(--white);
 }
 

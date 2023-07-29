@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0, maximum-scale=2, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="A dead simple youtube to wav converter">
     <title>Vert Front</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -16,8 +18,8 @@
     <div class="container flex justify-content-center">
         <div class="main-content">
             <div class="heading text-center">
-                <h1 class="main-title">VERT</h1>
-                <h3>A dead simple YouTube to wav converter.</h3>
+                <h1 class="main-title animate__animated animate__bounce">VERT</h1>
+                <h2>A dead simple YouTube to wav converter.</h2>
             </div>
             <div class="form-body">
                 <form id="inputForm">
@@ -27,8 +29,8 @@
                         <p class="success-text hide" id="success"></p>
                     </div>
                     <div id="options" class="options flex justify-content-center">
-                        <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 mt-2 rounded" id="convertSubmit" type="submit">Convert to WAV</button>
-                        <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 mt-2 rounded ms-2 hide" id="convertAnother" type="button"><i class="fa-solid fa-rotate-right mr-2"></i>Convert another</button>
+                        <button class="bg-sky-700 hover:bg-sky-800 text-white font-bold py-2 px-4 mt-2 rounded" id="convertSubmit" type="submit">Begin Conversion</button>
+                        <button class="bg-sky-700 hover:bg-sky-800 text-white font-bold py-2 px-4 mt-2 rounded ms-2 hide" id="convertAnother" type="button"><i class="fa-solid fa-rotate-right mr-2"></i>Convert another</button>
                     </div>
                     <div id="load-container" class="flex justify-content-center">
                         <i id="spin" class="fas fa-spinner fa-pulse fa-2x hide mt-4"></i>
