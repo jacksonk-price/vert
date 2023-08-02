@@ -14,25 +14,34 @@
     <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
 </head>
 <body>
-    <main>
-        <section>
-            <h1>A dead simple youtube to wav converter</h1>
-        </section>
-
-        <section>
-            <form>
-                <label for="url">
-                    Input a valid youtube video url
-                    <input type="text" name="input_url" id="url">
-                </label>
-                <button id="convert-btn" type="submit">Convert</button>
-            </form>
-
-            <div>
-                <!-- display downloads here -->
-            </div>
-        </section>
-    </main>
+    <div class="container">
+        <main>
+            <section class="hero">
+                <h1>
+                    A dead simple youtube to wav 
+                    <span class="emp animate__bounceIn">converter</span>
+                </h1>
+            </section>
+    
+            <section>
+                <div class="content">
+                    <form class="user-form">
+                        <fieldset>
+                            <label for="url">Enter a valid youtube video url</label>
+                            <input type="text" name="input_url" id="url">
+                            <div class="options">
+                                <button id="convert-btn" type="submit" class="primary-btn">Convert</button>
+                            </div>
+                        </fieldset>
+                    </form>
+        
+                    <div id="conversion-tank" class="conversions">
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
     <script type="module" src="js/app.js"></script>
 </body>
 </html>

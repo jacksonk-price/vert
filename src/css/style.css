@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --main: #3B82F6;
+    --darker: #060D19;
+    --dark: #091425;
+    --medium: #204887;
+    --light: #A7C7FB;
+    --light-gray: #e5e7eb;
+    --dark-gray: #18181b;
+    --gray: #9ca3af;
+    --white: #fff;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    background-image: linear-gradient(180deg, rgb(32, 72, 135),rgb(6, 13, 25));
+    color: var(--white);
+}
+
+section {
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+}
+
+i {
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    padding: 4rem;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 1000px;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+input[type=text] {
+    background-color: var(--white);
+    color: black;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    border-radius: 0.1rem;
+    border: none;
+    outline: 1px var(--gray) solid;
+    transition: all 0.2s ease;
+}
+
+input[type=text]:focus {
+    outline: 4px var(--main) solid;
+}
+
+input[type=text]:disabled {
+    background-color: var(--gray);
+}
+
+.hero {
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 15rem;
+}
+
+.hero h1 {
+    font-weight: 200;
+    font-size: 3rem;
+}
+
+.hero .emp {
+    display: block;
+    font-weight: 900;
+}
+
+.content {
+    padding: 0 5rem;
+}
+
+.user-form {
+    width: 100%;
+}
+
+.user-form label {
+    margin-bottom: 1rem;
+}
+
+#url {
+    width: 100%;
+}
+
+.options {
+    display: flex;
+    justify-content: end;
+}
+
+.options .primary-btn {
+    margin-top: 1rem;
+}
+
+.conversions {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0rem;
+    margin-top: 5rem;
+    /* outline: 1px var(--gray) solid;
+    background-color: var(--darker);
+    border-radius: 0.1rem; */
+}
+
+.conversion-item {
+    border-bottom: 1px var(--gray) solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0rem;
+}
+
+p[data-status="success"] {
+    background-color: green;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+/* Buttons */
+button {
+    border: none;
+    padding: 0.7rem 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:disabled {
+    background-color: var(--gray);
+}
+
+button:disabled:hover {
+    background-color: var(--gray);
+    cursor: default;
+}
+
+.primary-btn {
+    background-color: var(--main);
+    color: var(--white);
+}
+
+.primary-btn:hover {
+    background-color: var(--medium);
+}
+
+.secondary-btn {
+    background-color: var(--light-gray);
+    color: black;
+}
+
+.secondary-btn:hover {
+    background-color: var(--gray);
+}
