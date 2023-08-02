@@ -1,30 +1,30 @@
-import requester from "./requester.js";
+import Conversion from "./conversion.js";
+import helper from "./helper.js";
 
 const App = {
     $: {
         input: document.getElementById('url'),
         convertBtn: document.getElementById('convert-btn')
     },
-    handleResponse(response) {
-        console.log(response)
-    },
-    handleError(error) {
-        console.log(error);
-    },
     bindEvents() {
-        App.$.convertBtn.addEventListener('click', function(e) {
+        this.$.convertBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            requester.post("http://127.0.0.1:3000/conversion/create", {
-                "conversion" : {
-                    "input_url" : App.$.input.value
-                }
-            })
-            .then(response => App.handleResponse(response))
-            .catch(error => App.handleError(error))
-        })
+            const url = this.$.input.value;
+            if (url) {
+                Conversion.create(this, url);
+            }
+        });
+    },
+    disableFormElements() {
+        this.$.input.disabled = true;
+        this.$.convertBtn.disabled = true;
+    },
+    enableFormElements() {
+        this.$.input.disabled = false;
+        this.$.convertBtn.disabled = false;
     },
     init() {
-        App.bindEvents();
+        this.bindEvents();
     }
 }
 
