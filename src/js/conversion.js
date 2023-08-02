@@ -53,19 +53,12 @@ export const ConversionFactory = (application) => {
         });
     };
     const _downloadBase64 = (base64, video_title) => {
-        const binaryString = window.atob(base64);
-        const bytes = new Uint8Array(binaryString.length);
-        for (let i = 0; i < binaryString.length; i++) {
-            bytes[i] = binaryString.charCodeAt(i);
-        }
-        const arrayBuffer = bytes.buffer;
-    
-        const blob = new Blob([arrayBuffer], { type: 'audio/wav' });
-    
+        const bytes = Helper.base64ToUint8Array(base64);
+        const blob = Helper.uint8ArrayToBlob(bytes);
         const downloadLink = document.createElement('a');
+
         downloadLink.href = URL.createObjectURL(blob);
         downloadLink.download = `${video_title}.wav`;
-    
         downloadLink.click();
         downloadLink.remove();
     };
