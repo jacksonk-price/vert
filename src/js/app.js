@@ -1,5 +1,4 @@
-import Conversion from "./conversion.js";
-import helper from "./helper.js";
+import { ConversionFactory } from "./conversion.js";
 
 const App = {
     $: {
@@ -11,7 +10,8 @@ const App = {
             e.preventDefault();
             const url = this.$.input.value;
             if (url) {
-                Conversion.create(this, url);
+                const conversion = ConversionFactory(App);
+                conversion.create(url);
             }
         });
     },

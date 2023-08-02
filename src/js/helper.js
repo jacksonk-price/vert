@@ -1,4 +1,4 @@
-const helper = {
+const Helper = {
     insertHTML(parent, html) {
         parent.insertAdjacentHTML("beforeend", html);
     },
@@ -8,7 +8,10 @@ const helper = {
         } else {
           return text.slice(0, maxLength) + "...";
         }
+    },
+    uniqueId() {
+      return 'element-' + Date.now();
     }
 }
 
-export default helper;
+export default Helper;

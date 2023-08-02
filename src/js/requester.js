@@ -1,4 +1,4 @@
-const requester = {
+const Requester = {
     post(url, data) {
         return fetch(url, {
             method: "POST",
@@ -16,4 +16,4 @@ const requester = {
     }
 }
 
-export default requester
+export default Requester
