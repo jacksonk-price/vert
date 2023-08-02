@@ -3,7 +3,7 @@ import Helper from "./helper.js";
 
 export const ConversionFactory = (application) => {
     const app = application;
-    const _uniqueId = () => Helper.uniqueId();
+    const _uniqueId = Helper.uniqueId();
     const _getDownloadButton = () => document.getElementById(_uniqueId);
     const create = (url) => {
         app.disableFormElements();
