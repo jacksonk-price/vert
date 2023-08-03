@@ -71,7 +71,6 @@ input[type=text] {
     padding: 0.5rem;
     border-radius: 0.1rem;
     border: none;
-    outline: 1px var(--gray) solid;
     transition: all 0.2s ease;
 }
 
@@ -81,6 +80,16 @@ input[type=text]:focus {
 
 input[type=text]:disabled {
     background-color: var(--gray);
+}
+
+.field-error {
+    outline: 4px red solid;
+}
+
+.error-message {
+    color: #FF8F8F;
+    margin-top: 1rem;
+    font-weight: bold;
 }
 
 .hero {

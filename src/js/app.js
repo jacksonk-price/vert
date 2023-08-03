@@ -1,4 +1,5 @@
 import { ConversionFactory } from "./conversion.js";
+import Helper from "./helper.js";
 
 const App = {
     $: {
@@ -9,7 +10,7 @@ const App = {
         this.$.convertBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const url = this.$.input.value;
-            if (url) {
+            if (Helper.validYtUrl(url)) {
                 const conversion = ConversionFactory(App);
                 conversion.create(url);
             }
