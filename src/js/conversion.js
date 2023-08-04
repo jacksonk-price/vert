@@ -21,10 +21,11 @@ export const ConversionFactory = (application) => {
         _removeLoading();
         Helper.insertHTML(document.getElementById('conversion-tank'),
             `<div class="conversion-item animate__animated animate__headShake">
-                <p id="name" class="video-name">${Helper.truncateText(response["video_title"], 30)}</p>
-                <p id="status" class="video-status" data-status="success">Complete</p>
-                <p id="size" class="download-size">17MB</p>
-                <button id="${_uniqueId}" class="secondary-btn">Download</button>
+                <div class="option-wrap">
+                    <p id="status" class="video-status" data-status="success">Complete</p>
+                    <p id="name" class="video-name">${Helper.truncateText(response["video_title"], 50)}</p>
+                </div>
+                <button id="${_uniqueId}" class="secondary-btn"><i class="fa-solid fa-download"></i>Download</button>
             </div>`
         );
         _setDownloadListener(response);
