@@ -9,7 +9,7 @@ export const ConversionFactory = (application) => {
     const create = (url) => {
         app.disableFormElements();
         _showLoading();
-        Requester.post("http://127.0.0.1:3000/conversion/create", {
+        Requester.post("http://localhost:3000/conversion/create", {
             "conversion" : {
                 "input_url" : url
             }
@@ -39,7 +39,6 @@ export const ConversionFactory = (application) => {
                     <p id="status" class="video-status" data-status="error">Error</p>
                     <p id="name" class="video-name">Something went wrong. Please refresh and try again.</p>
                 </div>
-                <button id="${_uniqueId}" class="secondary-btn"><i class="fa-solid fa-download"></i>Download</button>
             </div>`
         );
     }
