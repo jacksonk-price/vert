@@ -17,13 +17,16 @@
     <div class="container">
         <main>
             <section class="hero">
+                <div class="image-asset">
+                    <img src="/src/assets/images/wave.svg" alt="" width="250" height="250">
+                </div>
                 <h1>
                     A dead simple youtube to wav 
                     <span class="emp animate__bounceIn">converter</span>
                 </h1>
                 <p>100% open source. No ads, ever.</p>
                 <div class="display-control">
-                    <a href="https://github.com/jacksonk-price/vert_front" aria-label="View the repository on GitHub" target="_blank"><i class="fa-brands fa-github"></i>View on GitHub</a>
+                    <a href="https://github.com/jacksonk-price/vert_front" aria-label="View the repository on GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>View on GitHub</a>
                 </div>
             </section>
             <section>
@@ -39,7 +42,7 @@
                             </fieldset>
                         </form>
                     </div>
-                    <div class="widget top-space">
+                    <div id="converter" class="widget top-space" hidden>
                         <div id="conversion-tank" class="conversions">
                         </div>
                     </div>

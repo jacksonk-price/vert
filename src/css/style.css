@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
-    --main: #3B82F6;
+    --main: #25539D;
     --darker: #060D19;
     --dark: #091425;
     --medium: #204887;
@@ -12,9 +12,9 @@
     --white: #fff;
     --form-text: #495979;
     --border-radius: 0.375rem;
-    --light-border: #d0dbf0;
-    --green: rgba(80,249,64,.271);
-    --input-bg: rgb(232, 240, 254);
+    --light-border: hsla(0,0%,100%,.1);
+    --green: rgba(80,249,64, 0.5);
+    --input-bg: #374151;
 }
 
 * {
@@ -64,13 +64,13 @@ main {
 
 label {
     display: block;
-    font-size: 0.9rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 input[type=text] {
-    background-color: var(--input-bg);
-    color: var(--form-text);
+    background-color: var(--white);
+    color: black;
     font-size: 1rem;
     padding: 0.5rem;
     border-radius: var(--border-radius);
@@ -79,10 +79,6 @@ input[type=text] {
 
 input[type=text]:focus {
     outline: 2px var(--main) solid;
-}
-
-input[type=text]:disabled {
-    background-color: var(--gray);
 }
 
 .field-error {
@@ -97,8 +93,7 @@ input[type=text]:disabled {
 
 .hero {
     text-align: center;
-    margin-top: 5rem;
-    margin-bottom: 15rem;
+    margin-bottom: 5rem;
 }
 
 .hero h1 {
@@ -108,6 +103,13 @@ input[type=text]:disabled {
 
 .hero p {
     margin-top: 1rem;
+    font-size: 500;
+}
+
+.image-asset {
+    display: flex;
+    justify-content: center;
+
 }
 
 .hero .display-control {
@@ -132,8 +134,7 @@ input[type=text]:disabled {
 }
 
 .content {
-    color: black;
-    background-color: hsla(0,0%,100%,.9);
+    background-color: hsla(220.9,39.3%,11%, 0.5);
     padding: 1rem;
     border-radius: var(--border-radius);
 }
@@ -143,7 +144,6 @@ input[type=text]:disabled {
 }
 
 .user-form label {
-    color: var(--form-text);
     margin-bottom: 0.5rem;
 }
 
@@ -161,7 +161,7 @@ input[type=text]:disabled {
 }
 
 .widget {
-    background-color: var(--white);
+    background-color: #1f2937;
     border-radius: var(--border-radius);
     border: 1px var(--light-border) solid;
     padding: 1rem;
@@ -181,6 +181,15 @@ input[type=text]:disabled {
 
 p[data-status="success"] {
     background-color: var(--green);
+    color: var(--white);
+    padding: 0.4rem;
+    margin-right: 0.5rem;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+}
+
+p[data-status="error"] {
+    background-color: #FF8F8F;
     color: black;
     padding: 0.4rem;
     margin-right: 0.5rem;
