@@ -7,9 +7,9 @@ const App = {
         convertBtn: document.getElementById('convert-btn')
     },
     bindEvents() {
-        this.$.convertBtn.addEventListener('click', (e) => {
+        App.$.convertBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            const url = this.$.input.value;
+            const url = App.$.input.value;
             if (Helper.validYtUrl(url)) {
                 const conversion = ConversionFactory(App);
                 conversion.create(url);
@@ -17,15 +17,15 @@ const App = {
         });
     },
     disableFormElements() {
-        this.$.input.disabled = true;
-        this.$.convertBtn.disabled = true;
+        App.$.input.disabled = true;
+        App.$.convertBtn.disabled = true;
     },
     enableFormElements() {
-        this.$.input.disabled = false;
-        this.$.convertBtn.disabled = false;
+        App.$.input.disabled = false;
+        App.$.convertBtn.disabled = false;
     },
     init() {
-        this.bindEvents();
+        App.bindEvents();
     }
 }
 
