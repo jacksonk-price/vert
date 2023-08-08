@@ -9,7 +9,7 @@ export const ConversionFactory = (application) => {
     const create = (url) => {
         app.disableFormElements();
         _showLoading();
-        Requester.post("http://localhost:3000/conversion/create", {
+        Requester.post("https://vert-api.onrender.com/conversion/create", {
             "conversion" : {
                 "input_url" : url
             }
