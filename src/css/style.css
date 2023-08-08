@@ -253,3 +253,15 @@ button i {
 .top-space {
     margin-top: 1rem;
 }
+
+@media only screen and (max-width: 650px)  {
+    .container {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 400px)  {
+    .container {
+        padding: 0.5rem;
+    }
+}
